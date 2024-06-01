@@ -1,4 +1,3 @@
-// object: singleton, created using constructor
 // object literals
 
 const mySym = Symbol("key1");
