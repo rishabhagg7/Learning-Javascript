@@ -41,3 +41,37 @@ console.log(loginUserMessage("rishabhagg"))
 console.log(loginUserMessage(""))
 console.log(loginUserMessage())
 
+function calculatePrice(...num1){ //rest operator
+    return num1
+}
+
+console.log(calculatePrice(200,300,400));
+
+function calculatePrice1(val1, val2, ...num1){ //rest operator
+    return num1
+}
+
+console.log(calculatePrice1(200,300,400,1000));
+
+const user = {
+    username:"rishabh7",
+    email:"code.rishabh712@gmail.com"
+}
+
+function handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and email is ${anyObject.email}`);
+}
+
+handleObject(user)
+handleObject({
+    username:"sammy",
+    email:"sam@gmail.com"
+})
+
+const newArray = [400,500,200,450]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+console.log(returnSecondValue(newArray));
+console.log(returnSecondValue([100,200,300,400]));
