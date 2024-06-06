@@ -47,3 +47,14 @@ form.addEventListener('submit',(e)=>{
   }
 })
 ```
+
+### Project 3
+```
+const clock = document.querySelector('#clock')
+
+setInterval(function(){
+  let currDate = new Date()
+  let currTime = currDate.toLocaleTimeString()
+  clock.innerHTML = currTime
+},1000)
+```
