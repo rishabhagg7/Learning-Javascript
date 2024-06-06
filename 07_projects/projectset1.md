@@ -94,18 +94,16 @@ function validateGuess(guess){
   }else{
     prevGuess.push(guess)
     displayGuess(guess)
-    if(numGuess === 11){
-      displayMessage(`Game Over. Random Number was ${generatedRandomNumber}`)
-      endGame()
-    }else{
-      checkGuess(guess)
-    }
+    checkGuess(guess)
   }
 }
 
 function checkGuess(guess){
   if(guess === generatedRandomNumber){
     displayMessage(`You guessed it right`)
+    endGame()
+  }else if(numGuess === 11){
+    displayMessage(`Game Over. Random Number was ${generatedRandomNumber}`)
     endGame()
   }else if(guess < generatedRandomNumber){
     displayMessage(`Number is low`)
@@ -134,7 +132,9 @@ function newGame(){
     guessResult.innerHTML = '';
     remaining.innerHTML = `${11-numGuess}`;
     userInput.removeAttribute(`disabled`);
+    submit.removeAttribute('disabled')
     startOver.removeChild(p);
+    lowOrHi.innerHTML = ''
     playGame = true;
   })
 }
@@ -142,6 +142,7 @@ function newGame(){
 function endGame(){
   userInput.value = ''
   userInput.setAttribute('disabled','')
+  submit.setAttribute('disabled','')
   p.classList.add('button')
   p.innerHTML = `<h2 id = "newGame">Start new Game</h2>`
   startOver.appendChild(p)
