@@ -152,3 +152,29 @@ function endGame(){
 
 
 ```
+
+### Project 6 
+```
+function changeBgColor(){
+  const randomColor = function(){
+    const hex = "0123456789ABCDEF"
+    let color = "#"
+    for(let i = 0; i < 6; i++){
+      color += hex[Math.round(Math.random()*16)]
+    }
+    return color
+  }
+  document.querySelector('body').style.backgroundColor = randomColor()
+}
+
+let changeBgColorId
+document.getElementById('start').addEventListener('click',function(e){
+  if(!changeBgColorId)
+    changeBgColorId = setInterval(changeBgColor,1000)
+})
+
+document.getElementById('stop').addEventListener('click',function(e){
+  clearInterval(changeBgColorId)
+  changeBgColorId = null
+})
+```
